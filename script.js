@@ -146,14 +146,15 @@ btnLogin.addEventListener('click', function (e) {
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
   const amount = Number(inputTransferAmount.value);
-  const reciberAcoount = accounts.find(
+  const reciberAccount = accounts.find(
     acc => acc.username === inputTransferTo.value
   );
 
   if (
     amount > 0 &&
+    reciberAccount &&
     currentAccount.balance >= amount &&
-    reciberAcoount?.username !== currentAccount.username
+    reciberAccount?.username !== currentAccount.username
   ) {
     console.log('transfer valid');
   }
