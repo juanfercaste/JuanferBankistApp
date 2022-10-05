@@ -135,16 +135,16 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
     //display movements
-    displayMovements(currentAccount);
+    displayMovements(currentAccount.movements);
     //display balance
-    calcDisplayBalance(currentAccount.movements);
+    calcDisplayBalance(currentAccount);
     //display summary
     calcDisplaySumary(currentAccount);
   }
 });
 
 btnTransfer.addEventListener('click', function (e) {
-  e.preventDefault;
+  e.preventDefault();
   const amount = Number(inputTransferAmount.value);
   const reciberAcoount = accounts.find(
     acc => acc.username === inputTransferTo.value
